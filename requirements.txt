@@ -21,4 +21,5 @@ urllib3
 Werkzeug
 wheel
 WTForms
+gunicorn
 
