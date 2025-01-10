@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% block content %}
+<style>
+    body {
+      background-color: #121212;
+      color: #fff;
+      font-family: Arial, sans-serif;
+    }
+    .album_name {
+      margin-top: 10px;
+      margin-bottom: 20px
+      color: #1db954;
+    }
+    .track {
+      margin: 10px 0;
+    }
+    .body{
+    display:flex;
+    }
+    .album_photo{
+    width: 300px;
+    height: 300px;
+    }
+
+</style>
+<body>
+  <h1 class="album_name">{{ album_name }}</h1>
+  <div class="body">
+    <img src="{{ album[0]['url'] }}" alt="{{ album_name }}" class="album_photo">
+    <ul>
+    {% for track in tracks %}
+    <li class="track">
+      {{ track.name }} - {{ track.artists }}
+    </li>
+    {% endfor %}
+  </ul>
+  </div>
+
+</body>
+{% endblock %}

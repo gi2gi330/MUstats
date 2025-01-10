@@ -1,0 +1,94 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 30px auto;
+            padding: 20px;
+            background: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        h1, h2 {
+            color: #4CAF50;
+            text-align: center;
+        }
+
+        p {
+            margin: 15px 0;
+            text-align: justify;
+        }
+
+        .image-placeholder {
+            width: 100%;
+            height: 200px;
+            background: #ddd;
+            margin: 20px 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 8px;
+            font-size: 18px;
+            color: #888;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 30px;
+            padding: 10px;
+            background: #4CAF50;
+            color: #fff;
+            border-radius: 8px;
+        }
+</style>
+<body>
+    <div class="container">
+        <h1>About MUstats</h1>
+        <h2>Your Gateway to Music Analytics</h2>
+        <p>
+            Welcome to <strong>MUstats</strong>, your ultimate source for tracking music trends, streaming statistics,
+            and insights into the world of music. Whether you're a casual listener, an industry professional, or
+            an artist, MUstats provides valuable data to help you stay informed about the music you love.
+        </p>
+        <p>
+            Our platform gathers real-time statistics from leading music streaming services and charts to give you
+            an in-depth look at what’s trending. Explore insights about artists, albums, genres, and even historical
+            data to better understand the evolving music landscape.
+        </p>
+
+        <h2>Our Mission</h2>
+        <p>
+            At MUstats, we believe that music is more than just sound — it’s data, culture, and a story waiting
+            to be uncovered. Our mission is to make music analytics accessible to everyone, from superfans to
+            industry experts. With user-friendly tools and accurate reporting, we aim to empower our users with
+            the knowledge they need to enjoy and succeed in the music world.
+        </p>
+
+        <h2>Why Choose MUstats?</h2>
+        <p>
+            - Comprehensive music statistics from multiple platforms<br>
+            - Easy-to-read charts and reports<br>
+            - Regular updates on the hottest music trends<br>
+            - Data for artists, albums, and genres<br>
+        </p>
+        <p>
+            Discover the beats, analyze the stats, and immerse yourself in the story of music with MUstats.
+        </p>
+        <div class="d-flex justify-content-center">
+            <a class="btn" href="/artists" type="button" style="background-color: #4CAF50; color: white; border: none;">
+                See Stats</a>
+        </div>
+    </div>
+
+{% endblock %}

@@ -1,0 +1,83 @@
+{% extends "base.html" %}
+{% block content %}
+<style>
+    body {
+        background-color: #121212;
+        color: #fff;
+        font-family: Arial, sans-serif;
+        }
+    h1 {
+        color: #1db954; /* Spotify Green */
+        }
+    .albums, .top-tracks {
+        margin-top: 20px;
+        display: flex;
+        flex-direction: column;
+        }
+    .albumclass {
+        display: flex;
+        flex-wrap: wrap;  /* Allows wrapping of items */
+        gap: 20px;  /* Space between items */
+        justify-content: space-evenly;  /* Center albums horizontally */
+        }
+    .album {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 22%;
+        height: 250px;
+        text-align: center;
+        }
+    .track {
+        display: flex;
+        flex-direction: column;
+        width: 22%;
+        height: 30px;
+        }
+    img {
+        width: 200px;
+        object-fit: cover;  /* Ensure the image scales correctly */
+        }
+    a {
+        color: white;
+        text-decoration: none;
+        }
+
+</style>
+<body>
+<h1>{{ name }}</h1>
+
+<div class="albums">
+    <h2>Albums</h2>
+    {% if current_user.is_authenticated %}
+    <div class="albumclass">
+    {% for album in albums %}
+    <a class="album" href="/album/{{album.id}}">
+      <img src="{{ album.images[0].url }}" alt="{{ album.name }}">
+      <p>{{ album.name }}</p>
+    </a>
+    {% endfor %}
+
+    </div>
+    {% else %}
+    <div>
+    {% for album in albums %}
+    <a class="album" href="/album/{{album.id}}">
+      <img src="{{ album.images[0].url }}" alt="{{ album.name }}">
+      <p>{{ album.name }}</p>
+    </a>
+    {% endfor %}
+    </div>
+
+    {% endif %}
+</div>
+<div class="top-tracks">
+    <h2>Top Tracks</h2>
+    {% for track in tracks %}
+    <div class="track">
+        <p> - {{ track.name }}</p>
+    </div>
+    {% endfor %}
+</div>
+</body>
+{% endblock %}

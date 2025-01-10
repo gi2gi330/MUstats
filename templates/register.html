@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block content %}
+<form method="post">
+    {{ form.username(class="form-control mt-2", placeholder="Username") }}
+    {{ form.password(class="form-control mt-2", placeholder="Password") }}
+    {{ form.repeat_password(class="form-control mt-2", placeholder="Repeat Password") }}
+    {{ form.submit(class="form-control mt-2 bg-warning") }}
+</form>
+<a href="/login">Login Instead</a>
+{% endblock %}
+

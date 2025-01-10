@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block content %}
+<form method="post" enctype="multipart/form-data">
+    {{ form.hidden_tag() }}
+    {{ form.name(class="form-control mt-2", placeholder="Album Name") }}
+    {{ form.image(class="form-control mt-2") }}
+    {{ form.submit(class="form-control mt-2 bg-warning") }}
+</form>
+{% endblock %}
